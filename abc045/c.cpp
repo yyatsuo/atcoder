@@ -9,15 +9,17 @@ int main()
   cin >> S;
   long long ans = 0;
   for(int bit=0; bit<(1<<S.length()-1); ++bit) {
-    int add = 0;
+    long long add = 0;
     for(int i=0; i<S.length(); ++i) {
-      if( i & bit ) {
-        cout << '+';
+      add = add*10 + (S[i]-'0');
+      if((1<<i)&bit) {
+        ans += add;
+        add = 0;
       }
-      cout << S[i];
     }
-    cout << endl;
+    ans += add;
   }
-  cout << ans ;
+  cout << ans << endl;
   return 0;
 }
+
