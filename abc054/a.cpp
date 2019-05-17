@@ -6,7 +6,7 @@ int main()
   cin >> A >> B;
   if(A==B)
     cout << "Draw";
-  else if(A==1 || A>B)
+  else if(A==1 || (B!=1 && A>B))
     cout << "Alice";
   else
     cout << "Bob";
