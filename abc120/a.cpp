@@ -1,11 +1,11 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 using namespace std;
+ 
 int main()
 {
-  int N;
-  cin >> N;
-  cout << N;
+  int A, B, C;
+  cin >> A >> B >> C;
+  // B 以下の A の倍数はいくつあるか？
+  cout << min(C, B/A) << endl;
   return 0;
 }
