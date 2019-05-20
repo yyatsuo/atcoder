@@ -1,11 +1,14 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 using namespace std;
+ 
 int main()
 {
-  int N;
-  cin >> N;
-  cout << N;
+  int A, B;
+  cin >> A >> B;
+  if(B%A)
+    cout << B-A << endl;
+  else
+    cout << A+B << endl;
+ 
   return 0;
 }
