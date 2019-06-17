@@ -1,12 +1,17 @@
-#include <bits/stdc++.h>
-#define rep(i, n) for(int i=0; i<n; ++i)
+#include <iostream>
 using namespace std;
-using ll = long long;
 
 int main()
 {
-  int N;
-  cin >> N;
-  cout << N;
+  int R;
+  cin >> R;
+  if(R < 1200)
+    cout << "ABC";
+  else if(R < 2800)
+    cout << "ARC";
+  else
+    cout << "AGC";
+  cout << endl;
   return 0;
 }
+
