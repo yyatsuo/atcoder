@@ -5,8 +5,8 @@ using ll = long long;
 
 int main()
 {
-  int N;
-  cin >> N;
-  cout << N;
+  int P, Q, R;
+  cin >> P >> Q >> R;
+  cout << min((P+Q),min((Q+R),(P+R)))<< endl;
   return 0;
 }
