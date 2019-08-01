@@ -10,7 +10,17 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 
 int main() {
   int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  int sum = 0, max = 0; string str;
+  rep(i, N) {
+    string S; int P;
+    cin >> S >> P;
+    sum += P;
+    if(max < P) {
+      max = P;
+      str = S;
+    }
+  }
+  if(max*2 > sum) cout << str << endl;
+  else cout << "atcoder" << endl;
 }
 
