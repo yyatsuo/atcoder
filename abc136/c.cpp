@@ -10,7 +10,24 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 
 int main() {
   int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  vector<ll> H(N);
+  rep(i, N) cin >> H[i];
+
+  if(N==1) {
+    cout << "Yes" << endl;
+    return 0;
+  }
+  rep(i, N-1) {
+    if(H[i] < H[i+1]) H[i+1]--;
+  }
+  rep(i, N-1) {
+    if(H[i] <= H[i+1]){
+      continue;
+    } else {
+      cout << "No" << endl;
+      return 0;
+    }
+  }
+  cout << "Yes" << endl;
 }
 

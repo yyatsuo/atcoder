@@ -10,7 +10,12 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 
 int main() {
   int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  int ans = 0;
+  for(int i=1; i<=N; ++i) {
+    if(i <= 9) ++ans;
+    else if(100 <= i && i <= 999) ++ans;
+    else if(10000 <= i && i<= 99999) ++ans;
+  }
+  cout << ans << endl;
 }
 
