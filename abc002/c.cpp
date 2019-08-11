@@ -9,8 +9,9 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  int x1,y1,x2,y2,x3,y3;
+  cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+  x2 -= x1; x3 -= x1; y2 -= y1; y3 -= y1;
+  printf("%.04f\n", abs(x2*y3-x3*y2)*0.5);
 }
 
