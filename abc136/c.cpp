@@ -9,19 +9,25 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  int N,M; cin >> N >> M;
-  vector<ll> mem(N+10,0);
-  rep(i, M) {
-    int A; cin >> A;
-    mem[A] = -1;
+  int N; cin >> N;
+  vector<ll> H(N);
+  rep(i, N) cin >> H[i];
+
+  if(N==1) {
+    cout << "Yes" << endl;
+    return 0;
   }
-  mem[0] = 1;
-  rep(i, N+1) {
-    if(mem[i] >=0 ) {
-      if(mem[i+1] >= 0) mem[i+1] = (mem[i]+mem[i+1])%MOD;
-      if(mem[i+2] >= 0) mem[i+2] = (mem[i]+mem[i+2])%MOD;
+  rep(i, N-1) {
+    if(H[i] < H[i+1]) H[i+1]--;
+  }
+  rep(i, N-1) {
+    if(H[i] <= H[i+1]){
+      continue;
+    } else {
+      cout << "No" << endl;
+      return 0;
     }
   }
-  cout << mem[N] << endl;
+  cout << "Yes" << endl;
 }
 
