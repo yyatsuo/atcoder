@@ -9,8 +9,11 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  int N, K; cin >> N >> K;
+  vector<int> R(N); rep(i,N) cin >> R[i];
+  sort(R.begin(), R.end(), greater<int>());
+  float ans = 0;
+  for(int i=K-1; i>=0; --i) ans = (ans+R[i])*0.5;
+  printf("%.06f\n",ans);
 }
 
