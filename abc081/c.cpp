@@ -9,8 +9,20 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  int N, K; cin >> N >> K;
+  map<int, int> A;
+  rep(i, N) {
+   int num; cin>>num;
+   if(A.count(num)) A.at(num)++;
+   else A.insert(make_pair(num, 1));
+  }
+  vector<int> num;
+  for(auto a:A) num.push_back(a.second);
+  sort(num.begin(), num.end());
+  ll ans = 0;
+  if(num.size() > K) {
+    for(int i=0; i<num.size()-K; ++i) ans += num[i];
+  }
+  cout << ans << endl;
 }
 
