@@ -9,8 +9,21 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  int N, K; cin >> N >> K;
+  vector<char> D(K);
+  rep(i, K) cin >> D[i];
+  for(int n=N;;++n) {
+    int cnt = 0;
+    string s = to_string(n);
+    for(char c:s) {
+      rep(i, K) {
+        if(c == D[i]) ++cnt;
+      }
+    }
+    if(cnt == 0) {
+      cout << n << endl;
+      break;
+    }
+  }
 }
 
