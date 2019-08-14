@@ -9,8 +9,15 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  string s; cin >> s;
+  char p = s[0];
+  int cnt = 0;
+  for(char c:s) {
+    if(p != c) {
+      ++cnt;
+      p = c;
+    }
+  }
+  cout << cnt << endl;
 }
 
