@@ -9,8 +9,9 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  string a, b; cin >> a >> b;
+  int num = stoi(a+b);
+  int i=(int)sqrt(num);
+  printf("%s\n", i == sqrt(num) ? "Yes":"No");
 }
 
