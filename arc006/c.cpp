@@ -10,7 +10,19 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 
 int main() {
   int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  vector<int> s;
+  rep(i, N) {
+    int w; cin >> w;
+    bool b = false;
+    for(int j=0; j<s.size(); ++j) {
+      if(s[j] >= w) {
+        s[j] = w;
+        b = true;
+        break;
+      }
+    }
+    if(!b) s.push_back(w);
+  }
+  cout << s.size() << endl;
 }
 
