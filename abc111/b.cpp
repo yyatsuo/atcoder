@@ -1,16 +1,29 @@
-#include <bits/stdc++.h>
-#define INF LLONG_MAX
-#define ll  long long
-#define ull unsigned long long
-#define rep(i,n) for(int i=0; i<n; ++i)
-#define MOD 1000000007
+#include <iostream>
 using namespace std;
-template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} return false;}
-template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
-int main() {
-  int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+int main()
+{
+  int N;
+  cin >> N;
+
+  if(N<=111)
+    cout << "111" << endl;
+  else if(N<=222)
+    cout << "222" << endl;
+  else if(N<=333)
+    cout << "333" << endl;
+  else if(N<=444)
+    cout << "444" << endl;
+  else if(N<=555)
+    cout << "555" << endl;
+  else if(N<=666)
+    cout << "666" << endl;
+  else if(N<=777)
+    cout << "777" << endl;
+  else if(N<=888)
+    cout << "888" << endl;
+  else if(N<=999)
+    cout << "999" << endl;
+  return 0;
 }
 
