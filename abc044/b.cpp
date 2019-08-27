@@ -7,10 +7,18 @@
 using namespace std;
 template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} return false;}
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
-
+char arr[26];
 int main() {
-  int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
+  string s; cin >> s;
+  for(char c:s) {
+    arr[c-'a']++;
+  }
+  rep(i, 26) {
+    if(arr[i]%2){
+      cout << "No" << endl;
+      return 0;
+    }
+  }
+  cout << "Yes" << endl;
 }
 
