@@ -10,7 +10,15 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  cin.tie(0);
-  ios::sync_with_stdio(false);
+  int N, T; cin >> N >> T;
+  int ans = 9999;
+  rep(i, N) {
+    int c, t; cin >> c >> t;
+    if( t <=T && c < ans) {
+      ans = c;
+    }
+  }
+  if(ans == 9999) cout << "TLE" << endl;
+  else cout << ans << endl;
 }
 
