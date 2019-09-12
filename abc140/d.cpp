@@ -14,5 +14,10 @@ int main() {
   ios::sync_with_stdio(false);
   int N, K; string S;
   cin >> N >> K >> S;
+  int score = 0;
+  rep(i, N-1) {
+    if(S[i] == S[i+1]) ++score;
+  }
+  cout << min(score+2*K, N-1) << endl;
 }
 
