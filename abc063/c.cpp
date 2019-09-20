@@ -12,12 +12,18 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
-  int N, K; string S;
-  cin >> N >> K >> S;
-  int score = 0;
-  rep(i, N-1) {
-    if(S[i] == S[i+1]) ++score;
+  int N; cin >> N;
+  int sum = 0;
+  int sub = 1111;
+  rep(i, N) {
+    int s; cin >> s;
+    sum += s;
+    if(s%10 != 0 && s < sub) sub = s;
   }
-  cout << min(score+2*K, N-1) << endl;
+  if(sum%10 == 0) {
+    if(sub == 1111) sum = 0;
+    else sum -= sub;
+  }
+  cout << sum << endl;
 }
 

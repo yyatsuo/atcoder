@@ -12,12 +12,21 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
-  int N, K; string S;
-  cin >> N >> K >> S;
-  int score = 0;
-  rep(i, N-1) {
-    if(S[i] == S[i+1]) ++score;
+  ll N; cin >> N;
+  map<ll, bool> mp;
+  rep(i, N) {
+    ll A; cin >> A;
+    auto it = mp.find(A);
+    if(it == mp.end()) {
+      mp.emplace(A, true);
+    } else {
+      it->second ? it->second=false : it->second=true;
+    }
   }
-  cout << min(score+2*K, N-1) << endl;
+  ll ans = 0;
+  for(auto a:mp) {
+    if(a.second) ++ans;
+  }
+  cout << ans << endl;
 }
 
