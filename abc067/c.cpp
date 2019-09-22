@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define INF INT_MAX
+#define INF LLONG_MAX
 #define ll  long long
 #define ull unsigned long long
 #define rep(i,n) for(ll i=0; i<n; ++i)
@@ -12,5 +12,17 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ll N; cin >> N;
+  vector<ll> a(N), sum(N);
+  rep(i, N) {
+    cin >> a[i];
+    if(i) sum[i] = sum[i-1]+a[i];
+    else sum[i] = a[i];
+  }
+  ll ans = INF;
+  rep(i, N-1) {
+    chmin(ans, abs((sum[N-1]-sum[i]) - sum[i]));
+  }
+  cout << ans << endl;
 }
 
