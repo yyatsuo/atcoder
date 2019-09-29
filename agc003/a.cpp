@@ -12,5 +12,17 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S; cin >> S;
+  vector<bool> dir(4, false);
+  for(char c:S) {
+    if(c == 'S') dir[0]=true;
+    else if(c == 'N') dir[1]=true;
+    else if(c == 'E') dir[2]=true;
+    else dir[3]=true;
+  }
+  if(dir[0] && dir[1] && dir[2] && dir[3]) cout << "Yes" << endl;
+  else if(dir[0] && dir[1] && !dir[2] && !dir[3]) cout << "Yes" << endl;
+  else if(!dir[0] && !dir[1] && dir[2] && dir[3]) cout << "Yes" << endl;
+  else cout << "No" << endl;
 }
 
