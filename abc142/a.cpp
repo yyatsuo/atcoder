@@ -8,14 +8,15 @@
 using namespace std;
 template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} return false;}
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
-int dp[10010][10010];
+
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
-  int N; cin >> N;
-  vector<int> A(N);
-  rep(i, N) cin >> A[i];
-  rep(i, N) {
+  float N; cin >> N;
+  int odd = 0;
+  for(int i=1; i<=N; ++i) {
+    if(i%2) ++odd;
   }
+  cout << odd/N << endl;
 }
 
