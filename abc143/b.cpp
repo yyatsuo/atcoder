@@ -10,23 +10,17 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  ll N; cin >> N;
-  string s, t;
-  cin >> s >> t;
-  ll k = 0;
-  for(ll i=0; i<s.size(); ++i) {
-    k = 0;
-    for(ll j=0; j+i<s.size(); ++j) {
-      if(s[i+j] == t[j]) {
-        if(i+j == s.size()-1) {
-          k = j+1;
-          goto end;
-        }
-      } else {
-        break;
-      }
+  cin.tie(0);
+  ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<int> d(N);
+  rep(i,N) cin >> d[i];
+  ll ans = 0;
+  for(int i=0; i<N; ++i) {
+    for(int j=i+1; j<N; ++j) {
+      ans += d[i] * d[j];
     }
   }
-  end:
-  cout << N+(N-k) << endl;
+  cout << ans << endl;
 }
+

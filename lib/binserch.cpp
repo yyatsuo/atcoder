@@ -9,24 +9,22 @@ using namespace std;
 template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} return false;}
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
-int main() {
-  ll N; cin >> N;
-  string s, t;
-  cin >> s >> t;
-  ll k = 0;
-  for(ll i=0; i<s.size(); ++i) {
-    k = 0;
-    for(ll j=0; j+i<s.size(); ++j) {
-      if(s[i+j] == t[j]) {
-        if(i+j == s.size()-1) {
-          k = j+1;
-          goto end;
-        }
-      } else {
-        break;
-      }
-    }
-  }
-  end:
-  cout << N+(N-k) << endl;
+int key = 500;
+bool solve(int mid) {
+  return mid >= key;
 }
+
+int main() {
+  cin.tie(0);
+  ios::sync_with_stdio(false);
+  int ok = 1000;
+  int ng = -1;
+  while(abs(ok-ng) > 1)
+  {
+    int mid = (ok + ng) / 2;
+    if(solve(mid)) ok = mid;
+    else ng = mid;
+  }
+  cout << ok << " " << ng << endl;
+}
+
