@@ -13,15 +13,10 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
   ll N; cin >> N;
-  vector<ll> a(N+1);
-  rep(i,N) cin >> a[i];
-  a[N] = 0;
-  ll ans = 0, l=0, r=0;
-  while(l < N) {
-    while(a[r+1] > a[r]) ++r;
-    ans += r-l+1;
-    ++l;
-    if(l==r+1) ++r;
+  ll ans = 0;
+  for(ll i=1; i<N/2+N%2; ++i) {
+    ll b = N-i;
+    if(N != i) ++ans;
   }
   cout << ans << endl;
 }

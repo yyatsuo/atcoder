@@ -13,16 +13,26 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
   ll N; cin >> N;
-  vector<ll> a(N+1);
-  rep(i,N) cin >> a[i];
-  a[N] = 0;
-  ll ans = 0, l=0, r=0;
-  while(l < N) {
-    while(a[r+1] > a[r]) ++r;
-    ans += r-l+1;
-    ++l;
-    if(l==r+1) ++r;
+  vector<ll> A(N), B(N);
+  map<ll, bool> m;
+  rep(i,N){
+    cin >> A[i];
+    M[i] = A[i];
   }
-  cout << ans << endl;
+  sort(M.begin(), M.end());
+  erase(unique(M.begin(), M.end()), M.end());
+  rep(i,N) cin >> B[i];
+
+  ll cnt = 0;
+  for(ll i=0; i<N; ++i) {
+    if(A[i] < B[i]) goto Yes;
+    if(A[i] == B[i]) continue;
+    else {
+      ++cnt;
+    }
+  }
+
+Yes:
+  cout << "Yes" << endl;
 }
 
