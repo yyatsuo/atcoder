@@ -9,8 +9,25 @@ using namespace std;
 template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} return false;}
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
+bool isPrime(int N) {
+  if(N==1) return false;
+  if(N==2) return true;
+  if(N%2==0) return false;
+  for(int i=3; i*i < N; i+=2) {
+    if(N%i == 0) return false;
+  }
+  return true;
+}
+
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int X; cin >> X;
+  for(int i=X; ;++i) {
+    if(isPrime(i)) {
+      cout << i <<endl;
+      return 0;
+    }
+  }
 }
 
