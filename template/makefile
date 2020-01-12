@@ -12,5 +12,10 @@ c: c.cpp
 d: d.cpp
 	g++ -std=c++14 d.cpp -o d.out
 
+e: e.cpp
+	g++ -std=c++14 d.cpp -o e.out
+
+f: f.cpp
+	g++ -std=c++14 d.cpp -o f.out
 clean:
-	rm -rf a.out b.out c.out d.out
+	rm -rf *.out
