@@ -1,10 +1,10 @@
-CONTEST = 
-SRC_A = $(CONTEST)_a.cpp
-SRC_B = $(CONTEST)_b.cpp
-SRC_C = $(CONTEST)_c.cpp
-SRC_D = $(CONTEST)_d.cpp
-SRC_E = $(CONTEST)_e.cpp
-SRC_F = $(CONTEST)_f.cpp
+CONTEST = abc152
+SRC_A = a.cpp
+SRC_B = b.cpp
+SRC_C = c.cpp
+SRC_D = d.cpp
+SRC_E = e.cpp
+SRC_F = f.cpp
 
 all: a b c d e f
 
@@ -27,22 +27,22 @@ f: $(SRC_F)
 	g++ -std=c++14 -Wall $(SRC_F) -o f.out
 
 test_a: a
-	python autoJudge/autoJudge.py $(CONTEST) $(SRC_A)
+	python autoJudge/autojudge.py -p ./$(SRC_A) $(CONTEST) $(CONTEST)_a
 
 test_b: b
-	python autoJudge/autoJudge.py $(CONTEST) $(SRC_B)
+	python autoJudge/autojudge.py -p ./$(SRC_B) $(CONTEST) $(SRC_B)
 
 test_c: c
-	python autoJudge/autoJudge.py $(CONTEST) $(SRC_C)
+	python autoJudge/autojudge.py -p ./$(SRC_C) $(CONTEST) $(SRC_C)
 
 test_d: d
-	python autoJudge/autoJudge.py $(CONTEST) $(SRC_D)
+	python autoJudge/autojudge.py -p ./$(SRC_D) $(CONTEST) $(SRC_D)
 
 test_e: e
-	python autoJudge/autoJudge.py $(CONTEST) $(SRC_E)
+	python autoJudge/autojudge.py -p ./$(SRC_E) $(CONTEST) $(SRC_E)
 
-test_e: f
-	python autoJudge/autoJudge.py $(CONTEST) $(SRC_F)
+test_f: f
+	python autoJudge/autojudge.py -p ./$(SRC_F) $(CONTEST) $(SRC_F)
 
 clean:
 	rm -rf *.out
