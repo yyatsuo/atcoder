@@ -1,16 +1,27 @@
 #include <bits/stdc++.h>
-#define INF INT_MAX
-#define ll  long long
-#define ull unsigned long long
-#define rep(i,n) for(ll i=0; i<n; ++i)
-#define FOR(i, s, e) for(ll i=s; i<e; ++i)
-#define MOD 1000000007
 using namespace std;
-template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} return false;}
-template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
+typedef long long ll;
+typedef pair<int,int> P;
+
+P f(int x) {
+  int a = x%10, b = 0;
+  while(x) { b = x; x /= 10; }
+  return P(a,b);
+}
 
 int main() {
-  cin.tie(0);
-  ios::sync_with_stdio(false);
+  int N; cin >> N;
+  map<P, int> mp;
+  for(int i=1; i<=N; ++i) {
+    P p = f(i);
+    mp[p]++;
+  }
+  ll ans = 0;
+  for(int i=1; i<=N; ++i) {
+    P p = f(i);
+    P q(p.second, p.first);
+    ans += mp[q];
+  }
+  cout << ans << endl;
 }
 
