@@ -12,5 +12,18 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<int> A(N);
+  rep(i, N) cin >> A[i];
+  for(int a:A) {
+    if(a%2) {
+      continue;
+    }
+    if(a%3 && a%5) {
+      cout << "DENIED" << endl;
+      return 0;
+    }
+  }
+  cout << "APPROVED" << endl;
 }
 

@@ -41,7 +41,7 @@ a: $(BIN_A)
 	python autoJudge/autojudge.py -p ./$(SRC_A) $(CONTEST) $(CONTEST)_a
 
 b: $(BIN_B)
-	python autoJudge/autojudge.py -p ./$(SRC_B) $(CONTEST) $(SRC_B)
+	python autoJudge/autojudge.py -p ./$(SRC_B) $(CONTEST) $(CONTEST)_b
 
 c: $(BIN_C)
 	python autoJudge/autojudge.py -p ./$(SRC_C) $(CONTEST) $(SRC_C)
