@@ -10,12 +10,12 @@ SRC_D = d.cpp
 SRC_E = e.cpp
 SRC_F = f.cpp
 
-BIN_A = a.cpp
-BIN_B = b.cpp
-BIN_C = c.cpp
-BIN_D = d.cpp
-BIN_E = e.cpp
-BIN_F = f.cpp
+BIN_A = a.out
+BIN_B = b.out
+BIN_C = c.out
+BIN_D = d.out
+BIN_E = e.out
+BIN_F = f.out
 
 all: a b c d e f
 
@@ -38,22 +38,22 @@ $(BIN_F): $(SRC_F)
 	$(CC) $(OPTIONS) $(SRC_F) -o $(BIN_F)
 
 a: $(BIN_A)
-	python autoJudge/autojudge.py -p ./$(SRC_A) $(CONTEST) $(CONTEST)_a
+	python autoJudge/autojudge.py -p ./$(BIN_A) $(CONTEST) $(CONTEST)_a
 
 b: $(BIN_B)
-	python autoJudge/autojudge.py -p ./$(SRC_B) $(CONTEST) $(SRC_B)
+	python autoJudge/autojudge.py -p ./$(BIN_B) $(CONTEST) $(CONTEST)_b
 
 c: $(BIN_C)
-	python autoJudge/autojudge.py -p ./$(SRC_C) $(CONTEST) $(SRC_C)
+	python autoJudge/autojudge.py -p ./$(BIN_C) $(CONTEST) $(CONTEST)_c
 
 d: $(BIN_D)
-	python autoJudge/autojudge.py -p ./$(SRC_D) $(CONTEST) $(SRC_D)
+	python autoJudge/autojudge.py -p ./$(BIN_D) $(CONTEST) $(CONTEST)_d
 
 e: $(BIN_E)
-	python autoJudge/autojudge.py -p ./$(SRC_E) $(CONTEST) $(SRC_E)
+	python autoJudge/autojudge.py -p ./$(BIN_E) $(CONTEST) $(CONTEST)_e
 
 f: $(BIN_F)
-	python autoJudge/autojudge.py -p ./$(SRC_F) $(CONTEST) $(SRC_F)
+	python autoJudge/autojudge.py -p ./$(BIN_F) $(CONTEST) $(CONTEST)_f
 
 clean:
 	rm -rf *.out testcase
