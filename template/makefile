@@ -38,22 +38,22 @@ $(BIN_F): $(SRC_F)
 	$(CC) $(OPTIONS) $(SRC_F) -o $(BIN_F)
 
 a: $(BIN_A)
-	python autoJudge/autojudge.py -p ./$(BIN_A) $(CONTEST) $(CONTEST)_a
+	python autoJudge/autojudge.py -p ./$(SRC_A) $(CONTEST) $(CONTEST)_a
 
 b: $(BIN_B)
-	python autoJudge/autojudge.py -p ./$(BIN_B) $(CONTEST) $(CONTEST)_b
+	python autoJudge/autojudge.py -p ./$(SRC_B) $(CONTEST) $(CONTEST)_b
 
 c: $(BIN_C)
-	python autoJudge/autojudge.py -p ./$(BIN_C) $(CONTEST) $(CONTEST)_c
+	python autoJudge/autojudge.py -p ./$(SRC_C) $(CONTEST) $(CONTEST)_c
 
 d: $(BIN_D)
-	python autoJudge/autojudge.py -p ./$(BIN_D) $(CONTEST) $(CONTEST)_d
+	python autoJudge/autojudge.py -p ./$(SRC_D) $(CONTEST) $(CONTEST)_d
 
 e: $(BIN_E)
-	python autoJudge/autojudge.py -p ./$(BIN_E) $(CONTEST) $(CONTEST)_e
+	python autoJudge/autojudge.py -p ./$(SRC_E) $(CONTEST) $(CONTEST)_e
 
 f: $(BIN_F)
-	python autoJudge/autojudge.py -p ./$(BIN_F) $(CONTEST) $(CONTEST)_f
+	python autoJudge/autojudge.py -p ./$(SRC_F) $(CONTEST) $(CONTEST)_f
 
 clean:
 	rm -rf *.out testcase
