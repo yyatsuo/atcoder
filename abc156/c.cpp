@@ -12,5 +12,17 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<int> X(N);
+  rep(i, N) { cin >> X[i]; }
+  int ans = INT_MAX;
+  for(int p=1; p<=100; ++p) {
+    int tmp = 0;
+    for(int i:X) {
+      tmp += (p-i)*(p-i);
+    }
+    chmin(ans, tmp);
+  }
+  cout << ans << endl;
 }
 
