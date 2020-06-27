@@ -10,7 +10,7 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  cin.tie(0);
-  ios::sync_with_stdio(false);
+  double L; cin >> L;
+  printf("%.12f\n", L/3*L/3*L/3);
 }
 
