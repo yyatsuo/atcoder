@@ -12,5 +12,22 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  int M; cin >> M;
+  vector<pair<int,int>> ab(M);// first->endpoint, second->startpoint
+  rep(i, M) {
+    int a, b;
+    cin >> a >> b;
+    ab[i] = make_pair(b, a);
+  }
+  sort(ab.begin(), ab.end());
+  int ans = 0, cur = 1;
+  for(auto i:ab) {
+    if(cur <= i.second) {
+      cur = i.first;
+      ++ans;
+    }
+  }
+  cout << ans << endl;
 }
 
