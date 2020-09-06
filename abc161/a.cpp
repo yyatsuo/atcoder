@@ -14,6 +14,6 @@ int main() {
   ios::sync_with_stdio(false);
   int X, Y, Z;
   cin >> X >> Y >> Z;
-  cout << Z << X << Y << endl;
+  cout << Z << " " << X << " " << Y << endl;
 }
 
