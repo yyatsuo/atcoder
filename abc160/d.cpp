@@ -10,7 +10,19 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  cin.tie(0);
-  ios::sync_with_stdio(false);
+  vector<int> ans(2200, 0);
+
+  int N, X, Y;
+  cin >> N >> X >> Y;
+
+  for(int i=1; i<N; ++i) {
+    for(int j=i+1; j<=N; ++j) {
+      int dist = min(j-i, abs(X-i)+1+abs(Y-j));
+      ans[dist]++;
+    }
+  }
+
+  for(int i=1; i<N; ++i)
+    cout << ans[i] << endl;
 }
 
