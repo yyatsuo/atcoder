@@ -12,5 +12,19 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  float N, M;
+  cin >> N >> M;
+  vector<float> A(N);
+  float sum = 0;
+  rep(i,N) {
+	  cin >> A[i];
+	  sum += A[i];
+  }
+
+  int tmp = 0;
+  rep(i,N) {
+	  if(A[i] >= sum/(4*M)) ++tmp;
+  }
+  cout << (tmp >= M ? "Yes" : "No") << endl;
 }
 
