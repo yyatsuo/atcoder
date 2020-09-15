@@ -12,5 +12,7 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  double R; cin >> R;
+  cout << fixed << setprecision(30) << R*2*M_PI << endl;
 }
 
