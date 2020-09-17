@@ -12,5 +12,15 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N;
+  cin>>N;
+  ll ans = 0;
+  for(int i=1; i<=N; ++i)
+  {
+    if(i%3 !=0 && i%5 !=0) {
+      ans += i;
+    }
+  }
+  cout << ans << endl;
 }
 
