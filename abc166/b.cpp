@@ -12,5 +12,22 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N, K;
+  cin >> N >> K;
+  vector<int> Snuke(N, 0);
+
+  rep(i,K) {
+    int d; cin >> d;
+    rep(i,d) {
+      int A; cin>>A;
+      Snuke[A-1]++;
+    }
+  }
+
+  int ans = 0;
+  rep(i,N) {
+    if(Snuke[i]==0) ++ans;
+  }
+  cout << ans << endl;
 }
 
