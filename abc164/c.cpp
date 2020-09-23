@@ -12,5 +12,13 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<string> S(N);
+  rep(i,N) {
+    cin >> S[i];
+  }
+  sort(S.begin(),S.end());
+  auto iter = unique(S.begin(),S.end());
+  cout << distance(S.begin(), iter) << endl;
 }
 
