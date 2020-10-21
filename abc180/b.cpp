@@ -12,5 +12,17 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<double> X(N);
+  rep(i,N) cin >> X[i];
+  double m = 0, u = 0, c = 0;
+  rep(i,N) {
+    m+=abs(X[i]);
+    u+=(X[i] * X[i]);
+    c = max(c, abs(X[i]));
+  }
+  cout << fixed << setprecision(20) << m << endl;
+  cout << sqrt(u) << endl;
+  cout << c << endl;
 }
 
