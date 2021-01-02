@@ -1,4 +1,4 @@
-CONTEST = abcxxx
+CONTEST = abc187
 
 CC = g++
 OPTIONS = -std=c++14 -Wall
