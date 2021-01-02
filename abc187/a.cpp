@@ -12,5 +12,15 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string A, B;
+  cin >> A >> B;
+  int Asum=0;
+  int Bsum=0;
+  rep(i,3) {
+    Asum += A[i]-'0';
+    Bsum += B[i]-'0';
+  }
+  if(Bsum > Asum) cout << Bsum << endl;
+  else cout << Asum << endl;
 }
 
