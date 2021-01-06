@@ -12,5 +12,22 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<string> S;
+  vector<string> dict;
+  rep(i,N) {
+    string s;
+    cin >> s;
+    if(s[0] == '!') dict.push_back(s.substr(1));
+    else S.push_back(s);
+  }
+  sort(dict.begin(), dict.end());
+  for(auto s:S) {
+    if(binary_search(dict.begin(), dict.end(), s)) {
+      cout << s << endl;
+      return 0;
+    }
+  }
+  cout << "satisfiable" <<endl;
 }
 
