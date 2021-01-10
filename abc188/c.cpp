@@ -12,5 +12,25 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<ull> A(pow(2,N));
+  vector<int> index(pow(2,N));
+  rep(i, pow(2,N)) {
+    cin >> A[i];
+    index[i] = i;
+  }
+  while(index.size() != 2) {
+    vector<int> tmp(index.size()/2);
+    rep(i, index.size()/2) {
+      int win;
+      if(A[index[2*i]] > A[index[2*i+1]]) win = index[2*i];
+      else win = index[2*i+1];
+      tmp[i] = win;
+    }
+    index = tmp;
+  }
+
+  if(A[index[0]] < A[index[1]]) cout << index[0]+1 << endl;
+  else cout << index[1]+1 << endl;
 }
 
