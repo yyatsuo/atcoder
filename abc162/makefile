@@ -1,7 +1,7 @@
 CONTEST = abc162
 
 CC = g++
-OPTIONS = -std=c++14 -Wall
+OPTIONS = -std=c++17 -Wall
 
 SRC_A = a.cpp
 SRC_B = b.cpp
