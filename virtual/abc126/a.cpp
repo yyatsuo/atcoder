@@ -14,5 +14,11 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N, K;
+  string S;
+  cin >> N >> K;
+  cin >> S;
+  S[K-1] = S[K-1] + 32;
+  cout << S << endl;
 }
 

@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+#define INF INT_MAX
+#define ll  long long
+#define ull unsigned long long
+#define rep(i,n) for(ll i=0; i<n; ++i)
+#define repp(i,n) for(ll i=1; i<=n; ++i)
+#define FOR(i, s, e) for(ll i=s; i<e; ++i)
+#define MOD 1000000007
+using namespace std;
+template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} return false;}
+template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
+int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y); } }
+
+int main() {
+  cin.tie(0);
+  ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<tuple<ll, ll, ll>> uvw(N-1);
+  rep(i,N-1) {
+    ll u, v, w;
+    cin >> u >> v >> w;
+    uvw[i] = make_tuple(u, v, w);
+  }
+
+  //sort(uvw.begin(), uvw.end());
+
+  vector<int> ans(N+1,0);
+  vector<bool> visited(N+1,false);
+  visited[1] = true;
+  for(ll i=0; i<uvw.size(); ++i) {
+
+    if(visited[get<0>(uvw[i])] && visited[get<1>(uvw[i])]) {
+      continue;
+    }
+
+    if(!visited[get<0>(uvw[i])] && !visited[get<1>(uvw[i])]) {
+      uvw.push_back(uvw[i]);
+      continue;
+    }
+
+    if(get<2>(uvw[i])%2 == 0) {
+      if(visited[get<0>(uvw[i])] && !visited[get<1>(uvw[i])]) {
+        ans[get<1>(uvw[i])] = ans[get<0>(uvw[i])];
+        visited[get<1>(uvw[i])] = true;
+      }
+      else if(!visited[get<0>(uvw[i])] && visited[get<1>(uvw[i])]) {
+        ans[get<0>(uvw[i])] = ans[get<1>(uvw[i])];
+        visited[get<0>(uvw[i])] = true;
+      }
+      continue;
+    }
+
+    if(get<2>(uvw[i])%2 != 0) {
+      if(visited[get<0>(uvw[i])] && !visited[get<1>(uvw[i])]) {
+        ans[get<1>(uvw[i])] = (ans[get<0>(uvw[i])] == 0 ? 1 : 0);
+        visited[get<1>(uvw[i])] = true;
+      }
+      else if(!visited[get<0>(uvw[i])] && visited[get<1>(uvw[i])]) {
+        ans[get<0>(uvw[i])] = (ans[get<1>(uvw[i])] == 0 ? 1 : 0);
+        visited[get<0>(uvw[i])] = true;
+      }
+      continue;
+    }
+  }
+  repp(i,N) cout << ans[i] << endl;
+}
+

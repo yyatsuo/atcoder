@@ -14,5 +14,20 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  double N, K;
+  cin >> N >> K;
+
+  double ans = 0;
+  repp(i, N) {
+    double tmp = i;
+    double times = 0;
+    while(tmp < K) {
+      tmp = tmp*2;
+      ++times;
+    }
+    double div = (double)N * pow(2, times);
+    ans += 1/div;
+  }
+  printf("%.15f\n", ans);
 }
 

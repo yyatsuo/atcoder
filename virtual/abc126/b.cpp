@@ -14,5 +14,22 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S; cin >> S;
+  string s1 = S.substr(0, 2);
+  string s2 = S.substr(2, 2);
+  int i1 = stoi(s1);
+  int i2 = stoi(s2);
+
+  if(1 <= i1 && i1 <= 12 && 1 <= i2 && i2 <= 12) {
+      cout << "AMBIGUOUS" <<endl;
+  }
+  else if ( 1 <= i1 && i1 <= 12) {
+      cout << "MMYY" << endl;
+  }
+  else if ( 1 <= i2 && i2 <= 12) {
+      cout << "YYMM" << endl;
+  } else {
+    cout << "NA" << endl;
+  }
 }
 
