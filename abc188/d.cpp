@@ -14,21 +14,22 @@ int main() {
   ios::sync_with_stdio(false);
   ll N, C;
   cin >> N >> C;
-  vector<tuple<ll, ll, ll>> abc(N);
+  vector<pair<ll, ll>> event(N*2);
   rep(i,N) {
     int a, b, c;
     cin >> a >> b >> c;
-    abc[i] = make_tuple(a, b, c);
+    event[2*i] = make_pair(a, c);
+    event[2*i+1] = make_pair(b+1, -1*c);
   }
-  sort(abc.begin(), abc.end());
+  sort(event.begin(), event.end());
 
-  ll ans = 0, cost = 0, left = 0, right = 0;
-  rep(i, abc.size()-1) {
-    auto t = abc[i];
-    auto t_n = abc[i+1];
-    left = max(left, get<0>(t));
-    right = min(right, get<1>(t));
-    cost += get<2>(t);
-    ans += (min(cost, C) * right-left;
+  ll ans = 0, day = event[0].first, fee = 0;
+  rep(i, N*2-1) {
+    fee += event[i].second;
+    if(event[i+1].first != day) {
+      ans += min(C, fee) * (event[i+1].first - day);
+      day = event[i+1].first;
+    }
   }
+  cout << ans << endl;
 }
