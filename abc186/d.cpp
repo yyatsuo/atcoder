@@ -12,5 +12,16 @@ template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} ret
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<ll> A(N);
+  rep(i,N) cin >> A[i];
+
+  ll ans = 0;
+  rep(i, N) {
+    FOR(j,i+1,N) {
+      ans += abs(A[j]-A[i]);
+    }
+  }
+  cout << ans << endl;
 }
 
