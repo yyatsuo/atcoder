@@ -14,10 +14,20 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+
   int N; cin >> N;
-  vector<int> A(i);
+  vector<ll> A(N);
+  rep(i,N) cin >> A[i];
+
+  ll ans = 0;
   rep(i,N) {
-    cin >> A[i];
+    ll x = 110000;
+    ll j = 0;
+    for(j=i; j<N; ++j) {
+      chmin(x, A[j]);
+      chmax(ans, x*((j-i)+1));
+    }
   }
+  cout << ans << endl;
 }
 

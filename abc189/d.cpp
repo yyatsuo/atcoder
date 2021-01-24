@@ -14,5 +14,18 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ull N; cin >> N;
+  vector<string> S(N);
+  rep(i,N) cin >> S[i];
+
+  ull ans = 0;
+  rep(i,N) {
+    if(S[i] == "OR") {
+      ans += pow(2,i+1);
+    } else {
+      ans++;
+    }
+  }
+  cout << ans << endl;
 }
 
