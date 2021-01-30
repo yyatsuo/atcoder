@@ -14,5 +14,25 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N, M; cin >> N >> M;
+  vector<int> A(M), B(M);
+  rep(i,M) cin >> A[i] >> B[i];
+  int K; cin >> K;
+  vector<int> C(K), D(K);
+  rep(i,K) cin >> C[i] >> D[i];
+  int ans = 0;
+
+  for(int bit=0; bit < (1<<K); ++bit) {
+    vector<bool> dish(N+1,false);
+
+    for(int i=0; i<K; ++i) {
+      if(bit & (1 << i)) { dish[C[i]] = true; }
+      else { dish[D[i]] = true; }
+    }
+    int tmp = 0;
+    rep(m,M) { if(dish[A[m]] && dish[B[m]]) ++tmp; }
+    ans = max(ans, tmp);
+  }
+  cout << ans << endl;
 }
 

@@ -14,5 +14,17 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ll N, S, D;
+  cin >> N >> S >> D;
+  vector<ll> X(N), Y(N);
+  rep(i,N) cin >> X[i] >> Y[i];
+
+  rep(i,N) {
+    if(X[i] < S && Y[i] > D) {
+      cout << "Yes" <<endl;
+      return 0;
+    }
+  }
+  cout << "No" <<endl;
 }
 

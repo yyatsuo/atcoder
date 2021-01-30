@@ -14,5 +14,15 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int A, B, C;
+  cin >> A >> B >> C;
+  string ans;
+  if(A > B) ans = "Takahashi";
+  if(A < B) ans = "Aoki";
+  if(A==B) {
+    if(C==0) { ans = "Aoki"; }
+    else { ans = "Takahashi"; }
+  }
+  cout << ans << endl;
 }
 
