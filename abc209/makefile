@@ -19,40 +19,40 @@ BIN_F = f.out
 
 all: a b c d e f
 
-$(BIN_A): $(SRC_A)
-	$(CC) $(OPTIONS) $(SRC_A) -o $(BIN_A)
+#$(BIN_A): $(SRC_A)
+#	$(CC) $(OPTIONS) $(SRC_A) -o $(BIN_A)
+#
+#$(BIN_B): $(SRC_B)
+#	$(CC) $(OPTIONS) $(SRC_B) -o $(BIN_B)
+#
+#$(BIN_C): $(SRC_C)
+#	$(CC) $(OPTIONS) $(SRC_C) -o $(BIN_C)
+#
+#$(BIN_D): $(SRC_D)
+#	$(CC) $(OPTIONS) $(SRC_D) -o $(BIN_D)
+#
+#$(BIN_E): $(SRC_E)
+#	$(CC) $(OPTIONS) $(SRC_E) -o $(BIN_E)
+#
+#$(BIN_F): $(SRC_F)
+#	$(CC) $(OPTIONS) $(SRC_F) -o $(BIN_F)
 
-$(BIN_B): $(SRC_B)
-	$(CC) $(OPTIONS) $(SRC_B) -o $(BIN_B)
-
-$(BIN_C): $(SRC_C)
-	$(CC) $(OPTIONS) $(SRC_C) -o $(BIN_C)
-
-$(BIN_D): $(SRC_D)
-	$(CC) $(OPTIONS) $(SRC_D) -o $(BIN_D)
-
-$(BIN_E): $(SRC_E)
-	$(CC) $(OPTIONS) $(SRC_E) -o $(BIN_E)
-
-$(BIN_F): $(SRC_F)
-	$(CC) $(OPTIONS) $(SRC_F) -o $(BIN_F)
-
-a: $(BIN_A)
+a:
 	python autoJudge/autojudge.py -p ./$(SRC_A) $(CONTEST) $(CONTEST)_a
 
-b: $(BIN_B)
+b:
 	python autoJudge/autojudge.py -p ./$(SRC_B) $(CONTEST) $(CONTEST)_b
 
-c: $(BIN_C)
+c:
 	python autoJudge/autojudge.py -p ./$(SRC_C) $(CONTEST) $(CONTEST)_c
 
-d: $(BIN_D)
+d:
 	python autoJudge/autojudge.py -p ./$(SRC_D) $(CONTEST) $(CONTEST)_d
 
-e: $(BIN_E)
+e:
 	python autoJudge/autojudge.py -p ./$(SRC_E) $(CONTEST) $(CONTEST)_e
 
-f: $(BIN_F)
+f:
 	python autoJudge/autojudge.py -p ./$(SRC_F) $(CONTEST) $(CONTEST)_f
 
 clean:
