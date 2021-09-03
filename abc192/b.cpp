@@ -14,5 +14,21 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string s; cin >> s;
+  rep(i, s.size()) {
+    char c = s[i];
+    if(i%2 == 0) { // Odd
+      if('A' <= c && c <='Z') {
+        cout << "No" << endl;
+        return 0;
+      }
+    } else {
+      if('a' <= c && c <='z') {
+        cout << "No" << endl;
+        return 0;
+      }
+    }
+  }
+  cout << "Yes" << endl;
 }
 
