@@ -14,5 +14,7 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ll X; cin >> X;
+  cout << 100 - X%100 <<endl;
 }
 
