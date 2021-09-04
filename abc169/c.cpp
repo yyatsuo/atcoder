@@ -10,7 +10,8 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 
 int main() {
-  cin.tie(0);
-  ios::sync_with_stdio(false);
+  ll A, B1, B2;
+  scanf("%lld %lld.%lld", &A, &B1, &B2);
+  cout << A * (B1*100 + B2) / 100 << endl;
 }
 
