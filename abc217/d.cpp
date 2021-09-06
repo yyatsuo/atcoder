@@ -11,56 +11,29 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y); } }
 
-int bin_search(const vector<pair<ll,ll>> &K, ll x)
-{
-  //cout << "bin search look for " << x << endl;
-  ll l = 0;
-  ll r = K.size();
-  while ( r >= 0 ) {
-    ll mid = l + (r-l)/2 + (r-l)%2;
-    if(r-l == 1) return 0;
-    //cout << "l:" << l << " r:" << r << " mid:" << mid << endl;
-    if( K[mid].first <= x && x <= K[mid].second ) {
-      //cout << "Bin search end " << mid << endl;
-      return mid;
-    } else if ( x < K[mid].first ) {
-      r = mid;
-    } else {
-      l = mid;
-    }
-  }
-  //cout << "Error" << endl;
-  return -1;
-}
-void print(const vector<pair<ll,ll>> &K) {
-  for(auto&& p:K) cout << "("<<p.first<<","<<p.second<<")"<<" ";
-  cout << endl;
-}
-
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
   vector<pair<ll,ll>> K;
   ll L; cin >> L;
-  K.push_back(make_pair(0,L));
-  //print(K);
   ll Q; cin >> Q;
 
+  set<ll> s;
+  s.insert(0);
+  s.insert(L);
+
   rep(i,Q) {
-    int c; cin >> c;
-    ll x; cin >> x;
-    ll idx = bin_search(K, x);
-    if(c == 1) {
-      auto p = K[idx];
-      K.erase(K.begin()+idx);
-      //cout << p.first << " " << p.second << " " << x << endl;
-      K.push_back(make_pair(p.first,x));
-      K.push_back(make_pair(x,p.second));
-      sort(K.begin(),K.end());
-      //print(K);
+    ll c, x;
+    cin >> c >> x;
+    if( c == 1 ) {
+      //cut
+      s.insert(x);
     }
-    if(c == 2) {
-      cout << K[idx].second - K[idx].first << endl;
+    if( c == 2 ) {
+      //show
+      auto r = *s.lower_bound(x);
+      auto l = *prev(s.lower_bound(x));
+      cout << r - l << endl;
     }
   }
 }
