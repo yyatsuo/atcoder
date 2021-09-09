@@ -14,5 +14,16 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  N = N * 100 * 108;
+  if(N < 2060000) {
+    cout << "Yay!" <<endl;
+  }
+  else if(N < 2070000) {
+    cout <<"so-so" <<endl;
+  }
+  else {
+    cout << ":("<<endl;
+  }
 }
 
