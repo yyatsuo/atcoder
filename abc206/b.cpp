@@ -14,5 +14,11 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ll N; cin >> N;
+  ll day = 1;
+  for(ll saving=0; saving < N; day++) {
+    saving += day;
+  }
+  cout << day-1 << endl;
 }
 
