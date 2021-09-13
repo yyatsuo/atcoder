@@ -14,5 +14,11 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string X; cin >> X;
+  for(auto c:X) {
+    if(c == '.') break;
+    cout << c;
+  }
+  cout << endl;
 }
 
