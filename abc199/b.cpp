@@ -14,5 +14,18 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  int a = 0;
+  int b = 1000;
+  rep(i,N) {
+    int A; cin >> A;
+    chmax(a, A);
+  }
+  rep(i,N) {
+    int B; cin >> B;
+    chmin(b, B);
+  }
+
+  cout << max(0, b-a+1) << endl;
 }
 
