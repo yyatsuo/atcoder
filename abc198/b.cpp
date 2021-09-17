@@ -14,5 +14,19 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S; cin >> S;
+  ll head = 0;
+  ll tail = S.size() - 1;
+  while(S[tail] == '0') { --tail; }
+
+  while(head < tail) {
+    if(S[head] != S[tail]) {
+      cout << "No" << endl;
+      return 0;
+    }
+    ++head;
+    --tail;
+  }
+  cout << "Yes" << endl;
 }
 
