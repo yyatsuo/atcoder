@@ -14,5 +14,33 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ll H, W, X, Y;
+  cin >> H >> W >> X >> Y;
+
+  char S[110][110];
+  rep(i,110) { rep(j,110) {
+    S[i][j] = '=';
+  }}
+
+  repp(i,H) { repp(j,W) {
+      cin >> S[i][j];
+  }}
+
+  int ans = 1;
+
+  // check E
+  int x = X; int y = Y;
+  while( S[x+1][y] == '.' ) { ++x; ++ans; }
+  // check W
+  x = X; y = Y;
+  while( S[x-1][y] == '.' ) { --x; ++ans; }
+  // check S
+  x = X; y = Y;
+  while( S[x][y+1] == '.') { ++y; ++ans; }
+  // check N
+  x = X; y = Y;
+  while( S[x][y-1] == '.') { --y; ++ans; }
+
+  cout << ans << endl;;
 }
 
