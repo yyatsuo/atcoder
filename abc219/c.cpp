@@ -14,5 +14,25 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
-}
+  string X; cin >> X;
+  map<char,char> dict;
+  for(ll i=0; i<(ll)X.size(); ++i) {
+    dict.insert(make_pair(X[i],'a'+i));
+  }
 
+  ll N; cin >> N;
+  vector<pair<string,string>> name;
+
+  rep(i,N) {
+    string S; cin >> S;
+    string Snew = "";
+    for(ll j=0; j<(ll)S.size(); ++j) {
+      Snew += dict.at(S[j]);
+    }
+    name.push_back(make_pair(Snew, S));
+  }
+  sort(name.begin(), name.end());
+  for(auto n : name) {
+    cout << n.second << endl;
+  }
+}

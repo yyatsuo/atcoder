@@ -14,5 +14,15 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int X; cin >> X;
+  if( X >= 90) {
+    cout << "expert" << endl;
+  } else if ( X >= 70 ) {
+    cout << 90-X << endl;
+  } else if ( X >= 40 ) {
+    cout << 70-X << endl;
+  } else {
+    cout << 40-X << endl;
+  }
 }
 

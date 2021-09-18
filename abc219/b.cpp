@@ -14,5 +14,13 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  vector<string> S(3);
+  for(int i=0; i<3; ++i) cin >> S[i];
+  string T; cin >> T;
+  for(char c:T) {
+    int idx = c-'0'-1;
+    cout << S[idx];
+  }
+  cout << endl;
 }
 
