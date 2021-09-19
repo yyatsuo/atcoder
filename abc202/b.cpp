@@ -16,5 +16,14 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S; cin >> S;
+  string ans = "";
+  for(int i=S.size()-1; i >= 0; --i) {
+    char c = S[i];
+    if(c == '6') c = '9';
+    else if(c == '9') c = '6';
+    ans += c;
+  }
+  cout << ans << endl;
 }
 

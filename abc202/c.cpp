@@ -16,5 +16,28 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ull N; cin >> N;
+  vector<ull> A(N+1),B(N+1),C(N+1);
+  repp(i,N) cin >> A[i];
+  repp(i,N) cin >> B[i];
+  repp(i,N) cin >> C[i];
+
+  vector<ull> P(N+1,0);
+  vector<ull> Q(N+1,0);
+
+  repp(i,N) {
+    P[A[i]]++;
+  }
+
+  repp(i,N) {
+    Q[B[C[i]]]++;
+  }
+
+  ull ans = 0;
+  repp(i,N) {
+    ans += P[i] * Q[i];
+  }
+
+  cout << ans << endl;
 }
 
