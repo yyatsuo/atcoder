@@ -16,4 +16,27 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ull N, K; cin >> N >> K;
+  ull cur = 0;
+
+  vector<pair<ull,ull>> L;
+  rep(i,N) {
+    ull A, B;
+    cin >> A >> B;
+    L.push_back(make_pair(A,B));
+  }
+  sort(L.begin(),L.end());
+
+  rep(i,N) {
+    ull A = L[i].first;
+    ull B = L[i].second;
+    ull distance = A-cur;
+    if(distance > K) {
+      break;
+    } else {
+      cur = A;
+      K = K-distance+B;
+    }
+  }
+  cout << cur+K << endl;
 }
