@@ -16,5 +16,14 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N, K; cin >> N >> K;
+
+  int ans = 0;
+  repp(i,N) {
+    repp(j,K) {
+      ans += 100*i + j;
+    }
+  }
+  cout << ans << endl;
 }
 
