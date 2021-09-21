@@ -14,5 +14,16 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ll A, B, C, D;
+  cin >> A >> B >> C >> D;
+
+
+  for(ull i=0; i<1000000000; ++i) {
+    if(A+i*B <= i*C*D) {
+      cout << i << endl;
+      return 0;
+    }
+  }
+  cout << -1 << endl;
 }
 
