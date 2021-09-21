@@ -13,8 +13,25 @@ template<class T> inline bool chmin(T& a, T b) { if(a>b) {a=b; return true;} ret
 template<class T> inline bool chmax(T& a, T b) { if(a<b) {a=b; return true;} return false;}
 int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y); } }
 
+void comp(int A, int B) {
+  if(A == B) cout << "=" << endl;
+  if(A > B ) cout << ">" << endl;
+  if(A < B ) cout << "<" << endl;
+}
+
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int A, B, C;
+  cin >> A >> B >> C;
+  if(A >= 0 && B >= 0) {
+    comp(A,B);
+  }
+  else if(C%2 == 0) {
+    comp(abs(A), abs(B));
+  }
+  else {
+    comp(A,B);
+  }
 }
 
