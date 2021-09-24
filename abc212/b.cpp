@@ -16,5 +16,22 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string X; cin >> X;
+  if(X[0]==X[1] && X[1]==X[2] && X[2]==X[3]) {
+    cout << "Weak" << endl;
+    return 0;
+  }
+
+  rep(i,3) {
+    if(X[i] == '9' && X[i+1] == '0') {
+      continue;
+    }
+    if(X[i+1] == X[i]+1) {
+      continue;
+    }
+    cout << "Strong" << endl;
+    return 0;
+  }
+  cout << "Weak" << endl;
 }
 
