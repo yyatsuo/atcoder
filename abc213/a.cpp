@@ -16,5 +16,7 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int A, B; cin >> A >> B;
+  cout << (A ^ B) << endl;
 }
 

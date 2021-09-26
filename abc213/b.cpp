@@ -16,5 +16,14 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ll N; cin >> N;
+  vector<pair<ll, ll>> A;
+  rep(i,N) {
+    ll tmp;
+    cin >> tmp;
+    A.push_back(make_pair(tmp, i+1));
+  }
+  sort(A.begin(), A.end());
+  cout << A[A.size()-2].second << endl;
 }
 
