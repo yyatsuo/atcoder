@@ -16,15 +16,15 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
-  ull N; cin >> N;
-  ull ans = 0;
-  while(1) {
-    if( pow(2,ans) <= N) {
-      ++ans;
-    } else {
-      cout << ans-1 << endl;
-      return 0;
+  ll N; cin >> N;
+  ll val = 1;
+  rep(i,61) {
+    if(val>N) {
+      cout << i -1 << endl;
+      break;
     }
+    val*=2;
   }
+  return 0;
 }
 
