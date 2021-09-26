@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <atcoder/all>
 #define INF INT_MAX
 #define ll  long long
 #define ull unsigned long long

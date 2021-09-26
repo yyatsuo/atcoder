@@ -1,7 +1,8 @@
 CONTEST = abcxxx
 
+
 CC = g++
-OPTIONS = -std=c++14 -Wall
+OPTIONS = -std=c++14 -Wall -I`git rev-parse --show-toplevel`/ac-library
 
 SRC_A = a.cpp
 SRC_B = b.cpp
