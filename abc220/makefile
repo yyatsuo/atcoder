@@ -1,6 +1,5 @@
 CONTEST = abc220
 
-
 CC = g++
 OPTIONS = -std=c++14 -Wall -I`git rev-parse --show-toplevel`/ac-library
 
