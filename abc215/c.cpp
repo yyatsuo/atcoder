@@ -16,5 +16,16 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S; cin >> S;
+  int K; cin >> K;
+  sort(S.begin(), S.end());
+
+  vector<string> V;
+  do {
+    V.push_back(S);
+  } while (next_permutation(S.begin(), S.end()));
+  sort(V.begin(), V.end());
+
+  cout << V[K-1] << endl;
 }
 
