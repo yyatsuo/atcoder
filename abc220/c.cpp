@@ -18,25 +18,23 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
-  ull N,X;
-  cin >> N;
+  ull N,X; cin >> N;
   vector<ull> A(N);
   rep(i,N) { cin >> A[i]; }
   cin >> X;
 
-  repp(i,N-1) { A[i] = A[i]+A[i-1]; }
-  ull Amax = A[A.size()-1];
-  ull rep = X/Amax;
-  ull ans = N*rep;
+  ull tmp = 0;
+  for(int&& a:A) { tmp+=a; }
+  ull ans = X/tmp;
+  ull sum = tmp*ans;
+  ans *= A.size();
 
-  ull sum = Amax * rep;
-  rep(i,N) {
-    sum += A[i];
+  for(int&& a:A) {
+    sum+=a;
     ++ans;
-    if( sum > X) {
-      break;
+    if(sum > X) {
+      cout << ans << endl;
+      return 0;
     }
   }
-  cout << ans << endl;
 }
-
