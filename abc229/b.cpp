@@ -17,5 +17,16 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string A, B;
+  cin >> A >> B;
+  for(int i=A.size()-1, j=B.size()-1; i>=0 && j>=0; --i,--j) {
+    int a = (A[i])-'0';
+    int b = (B[j])-'0';
+    if( a + b > 9) {
+      cout << "Hard" << endl;
+      return 0;
+    }
+  }
+  cout << "Easy" << endl;
 }
 
