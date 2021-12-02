@@ -63,7 +63,7 @@ class ExecuteTestCases:
         """
         print(RED, end="")
         if (os.path.exists(srcpath) == True):
-            cmd = 'g++ -o tmp ' + srcpath
+            cmd = 'g++ -std=c++14 -I`git rev-parse --show-toplevel`/ac-library -o tmp ' + srcpath
             if (subprocess.run(cmd, shell = True).returncode == 0):
                 self.result["build"] = 0
             else:
