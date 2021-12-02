@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include <atcoder/all>
+//#include <atcoder/all>
 #define INF INT_MAX
 #define ll  long long
 #define ull unsigned long long
@@ -17,5 +17,16 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S1,S2;
+  cin >> S1 >> S2;
+  if(S1 == ".." || S2 == ".." || S1 == "##" || S2 == "##") {
+    cout << "Yes" << endl;
+    return 0;
+  }
+  if(S1 == S2) {
+    cout << "Yes" << endl;
+    return 0;
+  }
+  cout << "No" << endl;
 }
 

@@ -1,4 +1,4 @@
-CONTEST = abcxxx
+CONTEST = abc229
 
 
 CC = g++
