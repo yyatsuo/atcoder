@@ -17,5 +17,8 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  if (N > 41) ++N;
+  printf("AGC%03d\n",N);
 }
 
