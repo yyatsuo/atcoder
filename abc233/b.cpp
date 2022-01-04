@@ -17,5 +17,17 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int L, R; cin >> L >> R;
+  string S; cin >> S;
+  for(int i=0; i<L-1; ++i) {
+    cout << S[i];
+  }
+  for(int i=R-1; i>=L-1; --i) {
+    cout << S[i];
+  }
+  for(int i=R; i<S.size(); ++i) {
+    cout << S[i];
+  }
+  cout << endl;
 }
 
