@@ -17,5 +17,10 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S; cin >> S;
+  int a, b;
+  a = S[0]-'0';
+  b = S[2]-'0';
+  cout << a*b << endl;
 }
 
