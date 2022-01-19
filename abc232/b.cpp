@@ -17,5 +17,25 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S; cin >> S;
+  string T; cin >> T;
+  char interval = S[0]-T[0];
+  for(int i=0; i<T.size(); ++i) {
+    if(T[i]+interval > 'z') {
+      T[i] = T[i]-(26-interval);
+    }
+    else if(T[i]+interval < 'a') {
+      T[i] = T[i]+(26+interval);
+    }
+    else {
+      T[i] = T[i] + interval;
+    }
+  }
+
+  if(S == T) {
+    cout << "Yes" << endl;
+  } else {
+    cout << "No" << endl;
+  }
 }
 
