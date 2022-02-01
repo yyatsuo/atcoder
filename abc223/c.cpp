@@ -17,5 +17,31 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<pair<double, double>> AB;
+  AB.resize(N);
+
+  double time = 0;
+  rep(i,N) {
+    double A, B;
+    cin >> A >> B;
+    AB[i] = make_pair(A,B);
+    time += A/B;
+  }
+  time /= 2;
+  double ans = 0;
+  for(auto& p : AB) {
+    double A = p.first;
+    double B = p.second;
+    double t = A/B;
+    if(t < time) {
+      time -= t;
+      ans += A;
+    } else {
+      ans += B*time;
+      break;
+    }
+  }
+  printf("%.10f\n", ans);
 }
 
