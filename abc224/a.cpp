@@ -18,5 +18,12 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S, er, ist; cin >> S;
+  er = S.substr(S.size()-2);
+  if(er == "er") {
+    cout << "er" << endl;
+  } else {
+    cout << "ist" << endl;
+  }
 }
 
