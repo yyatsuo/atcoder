@@ -17,5 +17,20 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  map<string, int> mp;
+  rep(i,N) {
+    string S; cin >> S;
+    mp[S] += 1;
+  }
+  string ans;
+  int max = 0;
+  for(auto itr=mp.begin(); itr!=mp.end(); ++itr) {
+    if(itr->second > max) {
+      max = itr->second;
+      ans = itr->first;
+    }
+  }
+  cout << ans << endl;
 }
 
