@@ -17,5 +17,14 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S; cin >> S;
+  string T = "oxx";
+  rep(i,4) { T = T+T; }
+  auto found = T.find(S);
+  if(found == string::npos) {
+    cout << "No" <<endl;
+  } else {
+    cout << "Yes" << endl;
+  }
 }
 
