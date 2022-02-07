@@ -18,5 +18,26 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<int> A(N);
+  rep(i, N) cin >> A[i];
+  int ans = 0;
+
+  vector<int> B;
+  for(int i=0, cur=0; i<N; ++i) {
+    int tmp = (cur+A[i])%360;
+    cur = tmp;
+    B.push_back(tmp);
+  }
+  B.push_back(0);
+
+  sort(B.begin(), B.end(), greater<int>{});
+
+  for(int i=0, cur=360; i<B.size(); ++i) {
+    chmax(ans, cur-B[i]);
+    cur = B[i];
+  }
+  cout << ans << endl;
+
 }
 
