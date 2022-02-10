@@ -18,5 +18,17 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<ll> x(N), y(N);
+  rep(i,N) { cin >> x[i] >> y[i]; }
+  int ans = 0;
+  for(int i=0; i<N; ++i) {
+    for(int j=i+1; j<N; ++j) {
+      for(int k=j+1; k<N; ++k) {
+        if( (y[k]-y[i])*(x[j]-x[i]) != (y[j]-y[i])*(x[k]-x[i]) ) ++ans;
+      }
+    }
+  }
+  cout << ans << endl;
 }
 
