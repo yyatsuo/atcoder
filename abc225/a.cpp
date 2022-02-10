@@ -18,5 +18,11 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  string S; cin >> S;
+  int ans;
+  if(S[0] == S[1] && S[1] == S[2]) ans=1;
+  else if(S[0] != S[1] && S[1] != S[2] && S[0] != S[2]) ans = 6;
+  else ans = 3;
+  cout << ans << endl;
 }
 
