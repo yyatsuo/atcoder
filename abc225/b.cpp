@@ -18,5 +18,28 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  --N;
+  vector<int> a(N), b(N);
+  rep(i,N) cin >> a[i] >> b[i];
+  // check a[0]
+  rep(i,N) {
+    if(a[i] != a[0] && b[i] != a[0])
+      goto next;
+  }
+  cout << "Yes" << endl;
+  return 0;
+
+  next:
+  rep(i,N) {
+    if(a[i] != b[0] && b[i] !=b[0])
+      goto no;
+  }
+  cout << "Yes" << endl;
+  return 0;
+
+  no:
+  cout << "No" << endl;
+  return 0;
 }
 
