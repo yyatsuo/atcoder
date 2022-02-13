@@ -18,5 +18,9 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int a, b;
+  scanf("%d.%d",&a,&b);
+  if(b/100 > 4) ++a;
+  cout << a << endl;
 }
 
