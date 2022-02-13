@@ -18,5 +18,14 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N, K, A; cin >> N >> K >> A;
+  if(N == 1) {
+    cout << 1 << endl;
+  }
+  else {
+    int ans = A+(K%N)-1;
+    if(ans > N) ans -= N;
+    cout << ans << endl;
+  }
 }
 
