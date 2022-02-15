@@ -18,5 +18,16 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<int> x(N), y(N);
+  rep(i,N) cin >> x[i] >> y[i];
+  double ans = 0;
+  for(int i=0; i<N; ++i) {
+    for(int j=0; j<N; ++j) {
+      double tmp = sqrt(pow(x[i]-x[j],2) + pow(y[i]-y[j],2));
+      chmax(ans,tmp);
+    }
+  }
+  cout << fixed << setprecision(8) << ans << endl;
 }
 
