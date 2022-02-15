@@ -18,5 +18,7 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  ll N; cin >> N;
+  YesNo((-2147483648<=N&&N<2147483648));
 }
 
