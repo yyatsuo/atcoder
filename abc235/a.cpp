@@ -18,5 +18,8 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int a, b, c;
+  scanf("%1d%1d%1d", &a, &b, &c);
+  cout << 100*(a+b+c) + 10*(a+b+c) + (a+b+c) << endl;
 }
 
