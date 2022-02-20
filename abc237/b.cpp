@@ -18,5 +18,19 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int H, W; cin >> H >> W;
+
+  vector<vector<int>> A(H, vector<int>(W));
+  rep(i,H) {
+    rep(j,W) {
+      cin >> A[i][j];
+    }
+  }
+  rep(j,W) {
+    rep(i,H) {
+      cout << A[i][j] << " ";
+    }
+    cout << endl;
+  }
 }
 
