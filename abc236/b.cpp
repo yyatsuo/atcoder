@@ -18,5 +18,14 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N; cin >> N;
+  vector<int> A(N+1, 0);
+  rep(i,4*N-1) {
+    int tmp; cin >> tmp;
+    ++A[tmp];
+  }
+  repp(i,N) {
+    if(A[i] != 4) cout << i <<endl;
+  }
 }
 
