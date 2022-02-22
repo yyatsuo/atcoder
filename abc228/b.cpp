@@ -18,5 +18,21 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N, X; cin >> N >> X;
+  vector<int> A(N+1);
+  vector<bool> ans(N+1, false);
+  repp(i,N) cin >> A[i];
+
+  int i = X;
+  while(ans[i] == false) {
+    ans[i] = true;
+    i = A[i];
+  }
+
+  int cnt=0;
+  repp(i,N) {
+    if(ans[i]) ++cnt;
+  }
+  cout << cnt << endl;
 }
 
