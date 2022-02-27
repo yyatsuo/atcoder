@@ -16,5 +16,16 @@ int gcd(int x, int y) { if(x % y == 0) { return y; } else { return gcd(y, x % y)
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
+  int N, M; cin >> N >> M;
+  vector<ll> A(N), B(M);
+  rep(i,N) cin >> A[i];
+  rep(i,M) cin >> B[i];
+  ll ans = 1000000000;
+  for(auto a:A) {
+    for(auto b:B) {
+      chmin(ans, abs(a-b));
+    }
+  }
+  cout << ans << endl;
 }
 
